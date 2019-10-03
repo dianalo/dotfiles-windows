@@ -48,8 +48,9 @@ choco install GoogleChrome        --limit-output; <# pin; evergreen #> choco pin
 choco install Firefox             --limit-output; <# pin; evergreen #> choco pin add --name Firefox             --limit-output
 
 # dev tools and frameworks
-choco install vscode              --limit-output
-choco install docker-cli          --limit-output
+choco install vscode                        --limit-output
+choco install docker-cli                    --limit-output
+choco install microsoft-windows-terminal    --limit-output
 
 # other
 choco install everything          --limit-output
