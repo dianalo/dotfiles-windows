@@ -41,7 +41,8 @@ choco install curl                --limit-output
 choco install wget                --limit-output
 choco install git.install         --limit-output
 choco install python              --limit-output
-choco install nodejs
+choco install nodejs              --limit-output
+choco install jdk8                --limit-output
 
 # browsers
 choco install GoogleChrome        --limit-output; <# pin; evergreen #> choco pin add --name GoogleChrome        --limit-output
@@ -51,11 +52,20 @@ choco install Firefox             --limit-output; <# pin; evergreen #> choco pin
 choco install vscode                        --limit-output
 choco install docker-cli                    --limit-output
 choco install microsoft-windows-terminal    --limit-output
+choco install smartgit                      --limit-output
+choco install wireshark                     --limit-output
 
 # other
 choco install everything          --limit-output
 choco install inkscape            --limit-output
 choco install vlc                 --limit-output
+choco install enpass.install      --limit-output
+choco install dropbox             --limit-output
+choco install whatsapp            --limit-output
+choco install steam               --limit-output
+choco install filezilla           --limit-output
+choco install spotify             --limit-output
+choco install adobereader         --limit-output
 
 Refresh-Environment
 

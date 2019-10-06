@@ -431,6 +431,30 @@ Get-AppXProvisionedPackage -Online | Where DisplayNam -like "Microsoft.ZuneVideo
 # Uninstall Windows Media Player
 Disable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -NoRestart -WarningAction SilentlyContinue | Out-Null
 
+# Uninstall Asus Product Registration
+Get-AppxPackage "B9ECED6F.ASUSProductRegistrationProgram" -AllUsers | Remove-AppxPackage
+
+# Uninstall XboxSpeechToTextOverlay
+Get-AppxPackage "Microsoft.XboxSpeechToTextOverlay" -AllUsers | Remove-AppxPackage
+Get-AppXProvisionedPackage -Online | Where DisplayNam -like "Microsoft.XboxSpeechToTextOverlay" | Remove-AppxProvisionedPackage -Online
+
+# Uninstall McAffee
+Get-AppxPackage "5A894077.McAfeeSecurity" -AllUsers | Remove-AppxPackage
+Get-AppXProvisionedPackage -Online | Where DisplayNam -like "5A894077.McAfeeSecurity" | Remove-AppxProvisionedPackage -Online
+
+# Uninstall "Xbox TCUI"
+Get-AppxPackage "Microsoft.Xbox.TCUI" -AllUsers | Remove-AppxPackage
+Get-AppXProvisionedPackage -Online | Where DisplayNam -like "Microsoft.Xbox.TCUI" | Remove-AppxProvisionedPackage -Online
+
+# Uninstall "LinkedInforWindows"
+Get-AppxPackage "7EE7776C.LinkedInforWindows" -AllUsers | Remove-AppxPackage
+Get-AppXProvisionedPackage -Online | Where DisplayNam -like "7EE7776C.LinkedInforWindows" | Remove-AppxProvisionedPackage -Online
+
+# Uninstall "Netflix"
+Get-AppxPackage "4DF9E0F8.Netflix" -AllUsers | Remove-AppxPackage
+Get-AppXProvisionedPackage -Online | Where DisplayNam -like "4DF9E0F8.Netflix" | Remove-AppxProvisionedPackage -Online
+
+
 # Prevent "Suggested Applications" from returning
 if (!(Test-Path "HKLM:\Software\Policies\Microsoft\Windows\CloudContent")) {New-Item -Path "HKLM:\Software\Policies\Microsoft\Windows\CloudContent" -Type Folder | Out-Null}
 Set-ItemProperty "HKLM:\Software\Policies\Microsoft\Windows\CloudContent" "DisableWindowsConsumerFeatures" 1
